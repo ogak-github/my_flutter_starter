@@ -33,7 +33,7 @@ final class LoginStateProvider
   LoginState create() => LoginState();
 }
 
-String _$loginStateHash() => r'8ed79dabf87b0e3f08391b3fc119f4ac1ad5394c';
+String _$loginStateHash() => r'02353b4ba8586827e5d0ca0ca895ab8970f51297';
 
 abstract class _$LoginState extends $AsyncNotifier<void> {
   FutureOr<void> build();

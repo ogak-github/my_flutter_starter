@@ -20,7 +20,7 @@ final class SessionProvider
         argument: null,
         retry: null,
         name: r'sessionProvider',
-        isAutoDispose: false,
+        isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
@@ -33,7 +33,7 @@ final class SessionProvider
   Session create() => Session();
 }
 
-String _$sessionHash() => r'04946115a2f2389e26d77a5f132a0378a7e772ee';
+String _$sessionHash() => r'073af8a789e91798503e517fdb1160c03de039e1';
 
 abstract class _$Session extends $AsyncNotifier<SessionData> {
   FutureOr<SessionData> build();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'login_state.dart';
+import '../provider/login_state.dart';
 
 class LoginScreen extends HookConsumerWidget {
   const LoginScreen({super.key});

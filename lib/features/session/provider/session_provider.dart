@@ -1,6 +1,7 @@
+import 'package:mylogger/mylogger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../core/db/secure_storage.dart';
+import '../../../core/db/secure_storage.dart';
 
 part 'session_provider.g.dart';
 
@@ -24,7 +25,7 @@ class UserData {
   const UserData({this.fullName, this.email, this.image});
 }
 
-@Riverpod(keepAlive: true)
+@riverpod
 class Session extends _$Session {
   @override
   Future<SessionData> build() async {
@@ -44,7 +45,8 @@ class Session extends _$Session {
     state = AsyncValue.data(sessionData);
   }
 
-  Future<void> clearSessionData() async {
+  void clearSessionData() {
+    MyLogger("Session").d("Clear session data");
     state = const AsyncValue.data(
       SessionData(isLoggedIn: false, token: null, userData: null),
     );
