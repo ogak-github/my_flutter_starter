@@ -1,6 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../session/provider/session_provider.dart';
 import '../repository/auth_repository.dart';
 
 part 'login_state.g.dart';
@@ -15,7 +14,6 @@ class LoginState extends _$LoginState {
     try {
       final authRepository = ref.read(authRepositoryProvider);
       await authRepository.login(username, password);
-      ref.invalidate(sessionProvider);
       state = const AsyncValue.data(null);
     } catch (e, stackTrace) {
       state = AsyncValue.error(e, stackTrace);
@@ -26,10 +24,7 @@ class LoginState extends _$LoginState {
     state = const AsyncValue.loading();
     try {
       final authRepository = ref.read(authRepositoryProvider);
-      await authRepository.logout(); // Clear dari secure storage
-
-      // Langsung update session state (ini yang trigger ref.listen di router)
-      ref.read(sessionProvider.notifier).clearSessionData();
+      await authRepository.logout();
     } catch (e, st) {
       if (!ref.mounted) return;
       state = AsyncValue.error(e, st);

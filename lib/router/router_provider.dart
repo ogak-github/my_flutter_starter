@@ -21,7 +21,9 @@ final sessionChangeNotifier = SessionChangeNotifier();
 GoRouter router(Ref ref) {
   // Listen ke session changes dan trigger router refresh
   ref.listen(sessionProvider, (previous, next) {
-    MyLogger("Router").d("Session changed: $next");
+    MyLogger(
+      "Router",
+    ).d("Session changed: IsLoggedIn => ${next.value?.isLoggedIn}");
     sessionChangeNotifier.notify();
   });
 

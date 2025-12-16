@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:my_flutter_starter/features/session/provider/session_provider.dart';
 
 import '../provider/login_state.dart';
 
@@ -91,15 +92,16 @@ class _LoginForm extends HookConsumerWidget {
             child: ElevatedButton(
               onPressed: loginState.isLoading
                   ? null
-                  : () {
+                  : () async {
                       if (formKey.currentState!.validate()) {
                         final loginState = ref.read(
                           loginStateProvider.notifier,
                         );
-                        loginState.login(
+                        await loginState.login(
                           usernameController.text.trim(),
                           passwordController.text.trim(),
                         );
+                        ref.invalidate(sessionProvider);
                       }
                     },
               child: loginState.isLoading

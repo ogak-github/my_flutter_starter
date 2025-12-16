@@ -20,7 +20,6 @@ class MyApp extends HookConsumerWidget {
     return MaterialApp.router(
       routerConfig: router,
       theme: ThemeData(useMaterial3: true),
-      
     );
   }
 }

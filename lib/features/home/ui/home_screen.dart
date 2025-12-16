@@ -25,6 +25,7 @@ class HomeScreen extends HookConsumerWidget {
               /// If result is true, then logout, else do nothing
               if (result) {
                 await ref.read(loginStateProvider.notifier).logout();
+                ref.read(sessionProvider.notifier).clearSessionData();
               }
             },
             icon: const Icon(Icons.logout),
