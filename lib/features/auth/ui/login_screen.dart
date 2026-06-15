@@ -11,11 +11,30 @@ class LoginScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Login")),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(16.0),
-          child: _LoginForm(),
+          child: Column(
+            children: [
+              Icon(
+                Icons.store,
+                size: 100,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              Text(
+                "You company name",
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 24),
+              Text(
+                "Login to your account",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 16),
+              _LoginForm(),
+            ],
+          ),
         ),
       ),
     );
@@ -23,7 +42,7 @@ class LoginScreen extends HookConsumerWidget {
 }
 
 class _LoginForm extends HookConsumerWidget {
-  _LoginForm({super.key});
+  _LoginForm();
 
   final formKey = GlobalKey<FormState>();
   @override
