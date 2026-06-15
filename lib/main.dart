@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mylogger/mylogger.dart';
 
-import 'router/router_provider.dart';
+import 'core/router/router_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

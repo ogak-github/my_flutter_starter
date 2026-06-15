@@ -5,10 +5,10 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mylogger/mylogger.dart';
 
-import '../features/auth/ui/login_screen.dart';
-import '../features/home/ui/home_screen.dart';
-import '../features/session/provider/session_provider.dart';
-import '../features/splash/ui/splash_screen.dart';
+import '../../features/auth/ui/login_screen.dart';
+import '../../features/home/ui/home_screen.dart';
+import '../../features/session/provider/session_provider.dart';
+import '../../features/splash/ui/splash_screen.dart';
 import 'routes.dart';
 
 /// Listenable yang bisa dipake buat trigger refresh router
