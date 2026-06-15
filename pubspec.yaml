@@ -45,7 +45,7 @@ dependencies:
   flutter_secure_storage: ^10.0.0
   
   #Riverpod State Management
-  riverpod_annotation: ^3.0.3
+  riverpod_annotation: ^4.0.2
   hooks_riverpod: ^3.0.3
   flutter_hooks: ^0.21.3+1
   
@@ -69,7 +69,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
   build_runner: ^2.10.4
-  riverpod_generator: ^3.0.3
+  riverpod_generator: ^4.0.3
   freezed: ^3.2.3
   json_serializable: ^6.11.2
 
